@@ -17,6 +17,8 @@ class ResultViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        resultTextView.numberOfLines = 3
+        
                 
         if(correctAnswer == 5){
             resultTextView.text = String("全問正解！これで君も未来のバリスタだ！")
