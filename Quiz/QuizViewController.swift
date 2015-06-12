@@ -32,8 +32,8 @@ class QuizViewController: UIViewController {
     
     //正誤判定の画像（マルバツ）
     @IBOutlet var AnswerMark: UIImageView!
-    let AnswerTrue:UIImage!  = UIImage(named: "true.png")
-    let AnswerFalse:UIImage! = UIImage(named: "false.png")
+    var AnswerTrue:UIImage!  = UIImage(named: "true.png")
+    var AnswerFalse:UIImage! = UIImage(named: "false.png")
     //var AnsAnimeArray = [NSArray]()
     var AnsTrueAnimeArray : Array<UIImage> = []
     var AnsFalseAnimeArray : Array<UIImage> = []
@@ -41,6 +41,10 @@ class QuizViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        AnsTrueAnimeArray.append(AnswerTrue)
+        AnsFalseAnimeArray.append(AnswerFalse)
+        AnswerMark.image = nil
         
         //------------------------ここから下にクイズを書く------------------------//
         quizArray.append(["問題文1 以下のドリンクの中でホイップがのっていないものはどれ？","キャラメルラテ","カフェラテ","チョコラテ",2])
